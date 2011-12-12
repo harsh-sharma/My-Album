@@ -1,0 +1,188 @@
+<html>
+<head>
+<title>My Album</title>
+<link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" media="screen" type="text/css" href="zoomimage.css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="eye.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript" src="zoomimage.js"></script>
+<script type="text/javascript" src="layout.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+function loadXMLDoc(pg)
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {//alert("harsh")
+ // if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    //{
+    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+   // }
+  }
+  //alert(pg)
+xmlhttp.open("GET",pg+".txt",true);
+xmlhttp.send();
+}
+ var ImageArr1 = new Array();
+ for(var i=1;i<=24;i++){
+ 	ImageArr1[i-1] = i+".jpg" 
+ }
+function RotateImages(Start)
+ {
+  var a = ImageArr1;
+  var b = document.getElementById('images_right');
+  if(Start==24)
+    Start=0;
+
+
+  b.src = "images/"+a[Start];
+  window.setTimeout("RotateImages("+(Start+1)+")",2000);
+ }
+ function table(){
+ var table;
+ table=""
+ table+="<table id=\"album\" align='center'  border=\"5\" cellspacing=\"5\" cellpadding=\"5\"><tr>"
+ for(var i=1;i<=5;i++){
+ 	table+="<td>"
+	table+="<a href='images/"+i+".jpg' title="+i+" class='example2'><img src='images/"+i+".jpg' width='55px' height='55px'></a>"
+	table+="</td>"
+	if(i%5==0){table+="</tr><tr>";}
+ }
+ 
+ table+="</tr></table>" 
+ //alert(table)
+ document.getElementById("myDiv").innerHTML=table;
+ }
+ $(document).ready(function(){
+  $("#simg").mouseover(function(){
+    $(this).hide();
+  });
+});
+</script>
+</head>
+<body onLoad="javascript:loadXMLDoc('home')">
+<table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td height="118" width="200px">&nbsp;</td>
+    <td rowspan="3" width="800px">
+		<table width="800px" border="0" cellspacing="0" cellpadding="0" align="center" >
+		  <tr>
+			<td id="header">
+				<h2>My Album</h2>
+				<p>My new life in Dublin</p>
+			</td>
+		  </tr>
+		  <tr>
+			<td id="navigation">
+				<ul>
+					<li><a href="javascript:loadXMLDoc('home')" title="Home">Home</a></li>
+					<li><a href="javascript:loadXMLDoc('about')" title="About">About</a></li>
+					<li><a href="javascript:loadXMLDoc('portfolio')" title="Portfolio">Portfolio</a></li>
+					<li><a href="javascript:loadXMLDoc('contact')" title="Contact">Contact</a></li>
+				</ul>
+				<hr>
+			</td>
+		  </tr>
+		  <tr>
+			<td id="page">
+				<table width="100%" height="380px" border="0" cellspacing="0" cellpadding="0">
+				  <tr>
+					<td id="ptext"><div id="myDiv"></div>
+						
+						
+					</td>
+					<td id="pimage"><img src="" id="images_right"></td>
+				  </tr>
+				</table>
+			</td>
+		  </tr>
+		  <tr>
+			<td id="footer">
+				<hr>
+				&copy; Copyright 2011, Harsh Sharma
+			</td>
+		  </tr>
+		</table>
+	</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="400">						
+		<table id="album" align="center"  border="5" cellspacing="5" cellpadding="5">
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td class="image"><a href="images/1.jpg" title="My Album" class="example2"><img src="images/s1.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+			</tr><tr>
+				<td>&nbsp;</td>
+				<td class="image"><a href="images/2.jpg" title="My Album" class="example2"><img src="images/s2.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/3.jpg" title="My Album" class="example2"><img src="images/s3.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+			</tr><tr>
+				<td class="image"><a href="images/4.jpg" title="My Album" class="example2"><img src="images/s4.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/5.jpg" title="My Album" class="example2"><img src="images/s5.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/6.jpg" title="My Album" class="example2"><img src="images/s6.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+			</tr><tr>
+				<td class="image"><a href="images/7.jpg" title="My Album" class="example2"><img src="images/s7.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/8.jpg" title="My Album" class="example2"><img src="images/s8.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/9.jpg" title="My Album" class="example2"><img src="images/s9.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+			</tr><tr>
+				<td>&nbsp;</td>
+				<td class="image"><a href="images/10.jpg" title="My Album" class="example2"><img src="images/s10.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/11.jpg" title="My Album" class="example2"><img src="images/s11.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+			</tr><tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td class="image"><a href="images/12.jpg" title="My Album" class="example2"><img src="images/s12.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+			</tr>
+		</table>
+	</td>
+	    <td height="400">						
+		<table id="album" align="center"  border="5" cellspacing="5" cellpadding="5">
+			<tr>				
+				<td class="image"><a href="images/13.jpg" title="My Album" class="example2"><img src="images/s13.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr><tr>				
+				<td class="image"><a href="images/14.jpg" title="My Album" class="example2"><img src="images/s14.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/15.jpg" title="My Album" class="example2"><img src="images/s15.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td>&nbsp;</td>
+			</tr><tr>
+				<td class="image"><a href="images/16.jpg" title="My Album" class="example2"><img src="images/s16.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/17.jpg" title="My Album" class="example2"><img src="images/s17.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/18.jpg" title="My Album" class="example2"><img src="images/s18.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+			</tr><tr>
+				<td class="image"><a href="images/19.jpg" title="My Album" class="example2"><img src="images/s19.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/20.jpg" title="My Album" class="example2"><img src="images/s20.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/21.jpg" title="My Album" class="example2"><img src="images/s21.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+			</tr><tr>				
+				<td class="image"><a href="images/22.jpg" title="My Album" class="example2"><img src="images/s22.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td class="image"><a href="images/23.jpg" title="My Album" class="example2"><img src="images/s23.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td>&nbsp;</td>
+			</tr><tr>				
+				<td class="image"><a href="images/24.jpg" title="My Album" class="example2"><img src="images/s24.jpg" alt="Seashell" width='50px' height='50px' /></a></td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+	</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+   RotateImages(0);
+</script>
+</body>
+</html>

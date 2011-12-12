@@ -1,0 +1,3 @@
+<h2>Welcome to <span class="site">My Album</span></h2>
+<p><span class="site">My Album</span> is my site where I have added photos of my new life in Dublin, Ireland I came here to do my masters course.<p>
+<p>I have joined National College of Ireland. The college is in heart of city and only 10 minutes' walk from city centre.</p>

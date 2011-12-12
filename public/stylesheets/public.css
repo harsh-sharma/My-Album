@@ -1,0 +1,160 @@
+html{
+	height: 100%;
+	width: 100%;
+}
+body{
+	padding-top:40px;
+	border: 0px;
+	/*font-family: Verdana, Arial, Helvetia, sans-serif;*/
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 15px;
+	background:#000000;
+}
+image{
+	border: none;
+}
+table, tr, td{
+	border-collapse: collapse;
+	vertical-align: ;
+	font-size: 12px;
+	line-height: 15px;
+}
+a{
+	color: #8d0d19;
+}
+.mandatory{
+	color:#ff0033;
+	font-weight:bold;
+}
+.site{
+	color: #00CC66;
+	font-style:italic;
+}
+/***********************Header********************/
+#header{
+	height: 80px;
+	width:100%;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	/*background: #1a446c;*/
+	background-image: url(../images/logo.jpg);
+	background-repeat: no-repeat;
+	color: #d4e6f4;
+	text-shadow:#669999;
+	text-decoration: inherit;
+	font-style:italic;
+	padding-left: 120px;
+	
+}
+#header h2{
+	margin: 0px;
+	font-size: 1.3em;
+}
+#header p{
+	font-size: 12px;
+	text-decoration:overline;
+}
+
+/***********************Main********************/
+#main{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	background: #eee4b9;
+}
+
+/***********************Navigation********************/
+#navigation{
+	height: 30px;
+	padding: 0px;
+	color: #d4e6f4;
+	/*background: #8d0d19;*/
+	text-align:right;
+}
+#navigation a{
+	color: #d4e6f4;
+	text-decoration: none;
+	text-transform:uppercase;
+	font-weight:bold;
+}
+#navigation a:hover{
+	color: #990066;
+}
+ul{
+	padding-left: 10px;
+	list-style: none;
+}
+li{
+	display:inline;
+	padding: 0px 20px 0px 20px;
+	vertical-align:bottom;
+}
+li:hover{
+	background-color: #FFFFFF;
+}
+
+/***********************Page Content********************/
+#page{
+	padding: 10px;
+	vertical-align: top;
+	background: #666666;
+	height: 400px;
+}
+
+#page h2{
+	color:#CCCCCC;
+	margin-top: 1em;
+}
+#page h3{
+	color: #8d0d19;
+	margin-top: 2em;
+	margin-left:20px;
+}
+#ptext, #ptext td{
+	vertical-align:text-top;
+	padding: 5px;
+	color:#CCCCCC;
+}
+#pimage{
+	height:350px;
+	width:400px;
+	background-color:#FFFFFF;
+	padding:10px;
+}
+#images_right{
+	width:400px;
+	height:340px;
+}
+#album{
+	border: 0px;
+	cellspacing:5px;
+	width: 100%;
+}
+#album td{
+	border:solid 3px #000000;
+	width:52px;
+	height:52px;
+	text-align:center;
+	margin: 3px;
+}
+.image{
+	border:solid 3px #000000;
+	width:52px;
+	height:52px;
+	background-color:#666666;
+	text-align:center;
+	margin: 3px;
+}
+		
+/***********************Footer********************/
+#footer{
+	height: 2em;
+	width:100%;
+	margin: 0px;
+	padding: 1px;
+	text-align: center;
+	/*background: #1a446c;*/
+	color: #d4e6f4;
+}
